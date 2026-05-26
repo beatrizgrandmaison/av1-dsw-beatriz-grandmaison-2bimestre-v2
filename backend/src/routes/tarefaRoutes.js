@@ -32,9 +32,9 @@ router.get("/tarefas/:id", TarefaController.obterTarefa);
 router.post("/tarefas", TarefaController.criarTarefa);
 
 /**
- * PATCH /tarefas/:id - Atualiza uma tarefa parcialmente
+ * PUT /tarefas/:id - Atualiza uma tarefa
  */
-router.patch("/tarefas/:id", TarefaController.atualizarTarefa);
+router.put("/tarefas/:id", TarefaController.atualizarTarefa);
 
 /**
  * DELETE /tarefas/:id - Remove uma tarefa
