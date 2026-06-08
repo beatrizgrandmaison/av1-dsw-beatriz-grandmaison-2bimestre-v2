@@ -8,7 +8,9 @@
 // - Preparar a aplicação para ser exportada
 
 import express from "express";
+import cors from "cors";
 import tarefaRoutes from "./routes/tarefaRoutes.js";
+import quadraRoutes from "./routes/quadraRoutes.js";
 
 // Cria a aplicação Express
 const app = express();
@@ -16,6 +18,9 @@ const app = express();
 // ========================================
 // MIDDLEWARES
 // ========================================
+
+// Habilita CORS para permitir requisições de outras origens
+app.use(cors());
 
 // Permite que o servidor entenda JSON enviado no corpo da requisição
 app.use(express.json());
@@ -38,6 +43,7 @@ app.get("/", (req, res) => {
 
 // Registra as rotas de tarefas
 app.use(tarefaRoutes);
+app.use("/quadras", quadraRoutes);
 
 // ========================================
 // TRATAMENTO DE ROTAS NÃO ENCONTRADAS

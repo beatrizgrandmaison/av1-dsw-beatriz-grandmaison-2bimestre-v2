@@ -9,11 +9,10 @@ datasource db {
 
 }
 
-// Modelo de Tarefa
-model Task {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String?
-  completed   Boolean  @default(false)
-  createdAt   DateTime @default(now())
+// Modelo de Quadra
+model Quadra {
+  id        Int     @id @default(autoincrement())
+  nome      String
+  tipo      String
+  valorHora Float
 }  
