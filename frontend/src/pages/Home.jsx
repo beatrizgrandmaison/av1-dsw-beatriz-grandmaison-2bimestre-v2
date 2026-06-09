@@ -26,7 +26,7 @@ function Home() {
       setErro("");
     } catch (error) {
       console.error(error);
-      setErro("Erro ao carregar quadras");
+      // Se falhar, mantém as defaultQuadras sem mostrar erro
     } finally {
       setLoading(false);
     }
