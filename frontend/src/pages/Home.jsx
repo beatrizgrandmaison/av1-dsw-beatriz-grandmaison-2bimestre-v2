@@ -22,9 +22,7 @@ function Home() {
   async function carregarQuadras() {
     try {
       const resposta = await api.get("/quadras");
-      if (Array.isArray(resposta.data) && resposta.data.length > 0) {
-        setQuadras(resposta.data);
-      }
+      setQuadras(resposta.data);
       setErro("");
     } catch (error) {
       console.error(error);
@@ -114,6 +112,9 @@ function Home() {
       </form>
 
       <div className="grid gap-4">
+        {quadras.length === 0 && (
+          <p>Nenhuma quadra cadastrada.</p>
+        )}
         {quadras.map((quadra) => (
           <QuadraCard
             key={quadra.id}
