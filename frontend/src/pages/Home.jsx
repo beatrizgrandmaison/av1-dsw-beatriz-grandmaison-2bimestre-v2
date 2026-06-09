@@ -8,7 +8,7 @@ const defaultQuadras = [
 ];
 
 function Home() {
-  const [quadras, setQuadras] = useState(defaultQuadras);
+  const [quadras, setQuadras] = useState([]);
   const [loading, setLoading] = useState(true);
   const [erro, setErro] = useState("");
   const [nome, setNome] = useState("");
@@ -26,7 +26,8 @@ function Home() {
       setErro("");
     } catch (error) {
       console.error(error);
-      // Se falhar, mantém as defaultQuadras sem mostrar erro
+      // Se falhar, usa as defaultQuadras silenciosamente
+      setQuadras(defaultQuadras);
     } finally {
       setLoading(false);
     }
